@@ -11,6 +11,9 @@ This is a test for a console based ascii adventure game.
 
     gcc test.c for mob "animation" test
 
+These are examples of running tests. Updates are ongoing. I am currently leaving unused files for learning purposes as I clean up the code and make it more efficient.      
+
+
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)  
 
