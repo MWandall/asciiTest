@@ -9,6 +9,21 @@ void bunny();
 // void house();
 void clearConsole();
 
+//TODO: update from print statements to array/for loop with NULL at end
+// something like const char printArray[] = {
+// "line of art",
+// "second line",
+// "etc",
+// NULL
+// };
+// for loop something like this if multiple inline (for character and mobs for example)
+// for (int i = 0; playerArr[i] != NULL && mobArr[i] != Null; i++)
+// {
+//     printf("%s \t  %s", playerArr[i], mobArr[i]);
+// }
+//this might be an issue with arrs that are not the same "height". i dont want the arr on the right to be floating
+
+
 int main()
 {
 
