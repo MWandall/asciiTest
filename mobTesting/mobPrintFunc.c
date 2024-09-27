@@ -26,7 +26,7 @@ int main()
 
 void staticMobs()
 {
-
+    
     for (int i = 0; archerResting[i] != NULL && archerResting[i] != NULL; i++)
     {
         printf("%s \t %s\n", archerAttacking[i], archerResting[i]);
@@ -48,6 +48,7 @@ void mobAnimation()
     for (int i = 0; i < 5; i++)
     {
         clearConsole();
+        //toggle animation back and forth
         if (i % 2 == 0)
         {
             // looping through mob arrays
