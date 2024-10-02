@@ -8,10 +8,13 @@ This is a test for a console based ascii adventure game.
 ## getting started 
 
     gcc main.c for menu test
+    ./a.exe to run 
 
-    gcc test.c for mob "animation" test
+    gcc ./mobTesting/mobPrintFunc.c for mob "animation" test
+    ./a.exe to run
 
-These are examples of running tests. Updates are ongoing. I am currently leaving unused files for learning purposes as I clean up the code and make it more efficient.      
+These are examples of running tests. Updates are ongoing. I am currently leaving unused files for learning purposes as I clean up the code and make it more efficient. 
+When compiling with gcc, feel free to use the -o flag to rename program instead of default ./a.exe      
 
 
 ## License 
