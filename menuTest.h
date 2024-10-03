@@ -5,9 +5,22 @@
 
 void heroExpression(char *hero[], char *newFace);
 void clearConsole();
+void launch();
+void splashLogo();
+void startMenu();
+void mainMenu();
+void shopMenu();
+void enterDungeon();
+void miniGameMenu();
+void saveAndQuit();
+void cheatMenu();
+void newGame();
+void continueGame();
+int exitGame();
+void credits();
+void underConstruction();
 
-
-char *splashLogo[] = {
+char *splashLogoArr[] = {
     " _____                                                                                                         _____ ",
     "( ___ )                                                                                                       ( ___ )",
     " |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
@@ -32,7 +45,7 @@ char *splashLogo[] = {
     NULL
 };
 
-char *startMenu[] = {
+char *startMenuArr[] = {
     " _____                                                             _____ ",
     "( ___ )                                                           ( ___ )",
     " |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
@@ -49,7 +62,7 @@ char *startMenu[] = {
     NULL
 };
 
-char *mainMenu[] = {
+char *mainMenuArr[] = {
         " _____                                                             _____ ",
     "( ___ )                                                           ( ___ )",
     " |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
@@ -65,7 +78,7 @@ char *mainMenu[] = {
     NULL
 };
 
-char *smallhouse[] = {
+char *smallhouseArr[] = {
     "  []___	 ",
     " /    /\\  ",
     "/____/__\\ ",
@@ -73,7 +86,7 @@ char *smallhouse[] = {
     NULL
 };
 
-char *mediumhouse[] = {
+char *mediumhouseArr[] = {
     "        @ @ @       ",
     "       []___        ",
     "      /    /\\____   ",
@@ -82,7 +95,7 @@ char *mediumhouse[] = {
     NULL
 };
 
-char *largeHouse[] = {
+char *largeHouseArr[] = {
     "     ':.                   ",
     "         []_____           ",
     "        /\\      \\          ",
@@ -93,7 +106,7 @@ char *largeHouse[] = {
     NULL
 };
 
-char *castle[] = {
+char *castleArr[] = {
     " [][][] /""\\ [][][] ",
     "  |::| /____\\ |::|  ",
     "  |[]|_|::::|_|[]|  ",
@@ -103,7 +116,7 @@ char *castle[] = {
     NULL
 };
 
-char *largeCastle[] = {
+char *largeCastleArr[] = {
 
 "                   T~~  ",
 "               |        ",
