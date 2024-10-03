@@ -70,6 +70,8 @@ void startMenu()
         printf("%s\n", startMenuArr[i]);
     }
 
+    scanf("%d", &choice);
+
     switch (choice)
     {
     case 1:
@@ -101,6 +103,8 @@ void mainMenu()
     {
         printf("%s\n", mainMenuArr[i]);
     }
+
+    scanf("%d", &choice);
 
     switch (choice)
     {
@@ -160,7 +164,8 @@ void cheatMenu()
 //TODO: will update but current example is in ./heroTesting/heroInit.c
 void newGame()
 {
-    underConstruction();
+    //heroInit(); will be added here
+    mainMenu();
 }
 
 //TODO: once file handling is in place, populate heroInit from CSV
@@ -185,6 +190,8 @@ void underConstruction()
     int choice = 0;
     printf("This feature is under construction :( Check back soon!\n");
     printf("[1]Back to Start Menu \t [2] Back to Main Menu \t [3] Exit");
+
+    scanf("%d", &choice);
 
     switch (choice)
     {
