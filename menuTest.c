@@ -60,6 +60,7 @@ void splashLogo()
     }
 }
 
+//prints menu and user choice for menu nav
 void startMenu()
 {
     int choice = 0;
@@ -91,6 +92,7 @@ void startMenu()
     }
 }
 
+//prints main menu and user choice for menu nav
 void mainMenu()
 {
     int choice = 0;
@@ -124,36 +126,44 @@ void mainMenu()
     }
 }
 
+//TODO: make item menu and add updates to hero struct
 void shopMenu()
 {
     underConstruction();
 }
 
+//TODO: figure out how i want to handle levels. (will this lead to a menu to pick starting floor or just throw you right into dungeon)
+//could add this as a stat attached to hero. (dungeon level) to keep track of progress/option to start at deeper dungeon floor
 void enterDungeon()
 {
     underConstruction();
 }
 
+//TODO: work in progress. (casino? battle ship? idk)
 void miniGameMenu()
 {
     underConstruction();
 }
 
+//TODO: will get more into this when I start file handling
 void saveAndQuit()
 {
     underConstruction();
 }
 
+//TODO: make a secret menu to add levels/gold to show more of the games intended progression for presentation
 void cheatMenu()
 {
     underConstruction();
 }
 
+//TODO: will update but current example is in ./heroTesting/heroInit.c
 void newGame()
 {
     underConstruction();
 }
 
+//TODO: once file handling is in place, populate heroInit from CSV
 void continueGame()
 {
     underConstruction();
