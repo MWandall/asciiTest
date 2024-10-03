@@ -5,6 +5,7 @@
 
 int main()
 {
+    clearConsole();
     launch();
 
     return 0;
@@ -29,7 +30,7 @@ void launch()
 
     while (1)
     {
-        printf("Start game? y/n");
+        printf("\t\t\t\t\tStart game? y/n\n");
         scanf(" %c", &choice);
         choice = tolower(choice);
 
@@ -63,6 +64,7 @@ void splashLogo()
 //prints menu and user choice for menu nav
 void startMenu()
 {
+    clearConsole();
     int choice = 0;
 
     for (int i = 0; startMenuArr[i] != NULL; i++)
@@ -97,6 +99,7 @@ void startMenu()
 //prints main menu and user choice for menu nav
 void mainMenu()
 {
+    clearConsole();
     int choice = 0;
 
     for (int i = 0; mainMenuArr[i] != NULL; i++)
@@ -176,7 +179,7 @@ void continueGame()
 
 int exitGame()
 {
-    printf("Thanks for playing!");
+    printf("\nThanks for playing!");
     exit(0);
 }
 
@@ -188,8 +191,8 @@ void credits()
 void underConstruction()
 {
     int choice = 0;
-    printf("This feature is under construction :( Check back soon!\n");
-    printf("[1]Back to Start Menu \t [2] Back to Main Menu \t [3] Exit");
+    printf("This feature is under construction :( Check back soon!\n\n");
+    printf("[1]Back to Start Menu \t [2] Back to Main Menu \t [3] Exit\n");
 
     scanf("%d", &choice);
 
