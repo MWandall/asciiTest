@@ -1,0 +1,15 @@
+The hero starts with 20 arrows, 5 potions that restore 1/3ed of the hero’s total hp, and 50 gold. 
+
+The game starts in a “HOME” menu with options for: shop, dungeon, inventory, and rest. Rest will fully heal the hero. The shop will sell arrows x5 for 10 gold, potions for 30 gold, and experience(exp) potions for 1000 gold. The exp potion will grant 50% of the total exp needed for the hero’s next level. The shop will also display the hero’s current amount of gold. Inventory will display your current inventory and allow the user to use EXP SHARDS, which will be explained later. If you select dungeon, there will be a message showing your current hp and ask the user if they are fully prepared to enter the dungeon, reminding them resting will fully restore hp.
+
+I want it to get slightly harder to level up each time. When you level up, all stats are raised. Also, every time you level up you get 2 experience shard(s) (EXP SHARDS) you can spend to raise an individual stat (either attack, magic, or range) by a small amount. 
+
+The battle will be similar to the original Pokémon games. Turn based where initially you select from: fight, items, or run. “Items” will display a submenu with your current inventory and allow you to use potions and a choice for going back to the earlier battle menu. If you run, you drop between 0 – 10 gold (if you have any) and return “HOME”. When you select fight there will be options for attack, range, or magic as well as a choice to go back to the battle menu. The monsters you fight will have level exp, hp, and attack. 
+
+There will be three different types of monsters. One that has melee, one that has range, and one that has magic. The hero’s attacks will damage them differently. The Melee monster is weak to magic, the magic monster is weak to range, and the range monster is weak to melee. There will be a small addition to the damage if you attack them with the proper counter. Feel free to give them names that befit their combat appearance. 
+
+During the fight, the user will select attack, magic, or range. There will be base damage based on the attack, magic, or ranged stat of the hero that has a 10 percent chance to miss, and 10 percent chance to critical hit, adding a few extra points of damage. If your hero reaches 0 hp, they are knocked out and a helpful adventurer will return you HOME but will rob you of 25 gold (if you have less that 25 gold, the adventurer feels bad for you and leaves you with one health potion).
+
+After each fight is complete, you will be given the choice to return “HOME” or press on in the dungeon. 
+The ideal starting balance for stats will be the hero is able to defeat 1.5 monsters before leveling up. The experience section on the monster struct will be awarded to the hero after completing the fight along with a range of 10 to 50 gold.
+When choosing to press on in the dungeon, the more consecutive fights you meet, the monsters will get slightly harder, give more exp, and give more gold. 
