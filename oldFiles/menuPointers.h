@@ -1,9 +1,9 @@
-// #ifndef MENU_TEST_H
-// #define MENU_TEST_H
+// #ifndef MENU_POINTERS_H
+// #define MENU_POINTERS_H
 
 // #include <stdio.h>
 
-// void heroExpression(char *hero[], char *newFace);
+
 // void clearConsole();
 // void launch();
 // void splashLogo();
@@ -16,9 +16,32 @@
 // void cheatMenu();
 // void newGame();
 // void continueGame();
-// int exitGame();
+// void exitGame();
 // void credits();
 // void underConstruction();
+// void heroExpression(char *hero[], char *newFace);
+
+
+// typedef struct {
+//     char **displayArr;   // Array to print the menu content
+//     void (*options[10])(); // Array of function pointers for up to 10 options
+//     int numOptions;      // Number of options in the menu
+// } Menu;
+
+// Menu STARTMenu = {
+//     startMenuArr,    // Display content
+//     { newGame, continueGame, exitGame, credits }, // Function pointers to menu actions
+//     4   // Number of valid options
+// };
+
+// Menu mainMenu = {
+//     mainMenuArr,    
+//     { shopMenu, enterDungeon, miniGameMenu, saveAndQuit, cheatMenu },
+//     5
+// };
+
+
+
 
 // char *splashLogoArr[] = {
 //     " _____                                                                                                         _____ ",
@@ -144,4 +167,4 @@
 // char *annoyed = " ( -.- )   ";
 // char *sad = " ( ;_; )   ";
 
-// #endif /* MENU_TEST_H*/
+// #endif /* MENU_POINTERS_H*/
