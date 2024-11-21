@@ -91,6 +91,7 @@ void startMenu()
 
     default:
         printf("OOPS! That's not an option!");
+        while (getchar() != '\n');
         startMenu();
         break;
     }
@@ -102,6 +103,8 @@ void mainMenu()
     clearConsole();
     int choice = 0;
 
+    printHomeSceneInline();
+    printGround();
     for (int i = 0; mainMenuArr[i] != NULL; i++)
     {
         printf("%s\n", mainMenuArr[i]);
@@ -128,11 +131,24 @@ void mainMenu()
         break;
     default:
         printf("OOPS! Thats not an option!");
+        while (getchar() != '\n');
+        
         mainMenu();
         break;
     }
 }
 
+void printHomeSceneInline() {
+        for (int i = 0; mediumHouseArr[i] != NULL && hero[i] != NULL && heroStatDisplay[i] != NULL; i++)
+    {
+        printf("%s \t %s \t %s\n", mediumHouseArr[i], hero[i], heroStatDisplay[i]);
+    }  
+}
+void printGround() {
+    for (int i = 0; groundArr[i] != NULL; i++) {
+        printf("%s\n", groundArr[i]);
+    }
+}
 //TODO: make item menu and add updates to hero struct
 void shopMenu()
 {
