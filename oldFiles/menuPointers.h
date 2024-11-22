@@ -1,26 +1,47 @@
-// #ifndef MENU_TEST_H
-// #define MENU_TEST_H
+// #ifndef MENU_POINTERS_H
+// #define MENU_POINTERS_H
 
 // #include <stdio.h>
 
-void heroExpression(char *hero[], char *newFace);
-void clearConsole();
-void launch();
-void splashLogo();
-void startMenu();
-void mainMenu();
-void shopMenu();
-void enterDungeon();
-void miniGameMenu();
-void saveAndQuit();
-void cheatMenu();
-void newGame();
-void continueGame();
-int exitGame();
-void credits();
-void underConstruction();
-void printHomeSceneInline();
-void printGround();
+
+// void clearConsole();
+// void launch();
+// void splashLogo();
+// void startMenu();
+// void mainMenu();
+// void shopMenu();
+// void enterDungeon();
+// void miniGameMenu();
+// void saveAndQuit();
+// void cheatMenu();
+// void newGame();
+// void continueGame();
+// void exitGame();
+// void credits();
+// void underConstruction();
+// void heroExpression(char *hero[], char *newFace);
+
+
+// typedef struct {
+//     char **displayArr;   // Array to print the menu content
+//     void (*options[10])(); // Array of function pointers for up to 10 options
+//     int numOptions;      // Number of options in the menu
+// } Menu;
+
+// Menu STARTMenu = {
+//     startMenuArr,    // Display content
+//     { newGame, continueGame, exitGame, credits }, // Function pointers to menu actions
+//     4   // Number of valid options
+// };
+
+// Menu mainMenu = {
+//     mainMenuArr,    
+//     { shopMenu, enterDungeon, miniGameMenu, saveAndQuit, cheatMenu },
+//     5
+// };
+
+
+
 
 // char *splashLogoArr[] = {
 //     " _____                                                                                                         _____ ",
@@ -62,71 +83,55 @@ void printGround();
 
 //     NULL};
 
-char *mainMenuArr[] = {
-    "\t\t _____                                                             _____ ",
-    "\t\t( ___ )                                                           ( ___ )",
-    "\t\t |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |\t\t |              Main Menu               |\t   |   |",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |\t\t | [1] Shop         | [2] Dungeon       |\t   |   |",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |\t\t | [3] Rest         | [4] Save & Quit   |\t   |   |",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
-    "\t\t(_____)                                                           (_____) ",
-    NULL};
+// char *mainMenuArr[] = {
+//     "\t\t _____                                                             _____ ",
+//     "\t\t( ___ )                                                           ( ___ )",
+//     "\t\t |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
+//     "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
+//     "\t\t |   |\t\t |              Main Menu               |\t   |   |",
+//     "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
+//     "\t\t |   |\t\t | [1] Shop         | [2] Dungeon       |\t   |   |",
+//     "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
+//     "\t\t |   |\t\t | [3] Mini Games   | [4] Save & Quit   |\t   |   |",
+//     "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
+//     "\t\t |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
+//     "\t\t(_____)                                                           (_____) ",
+//     NULL};
 
-char *shopMenuArr[] = {
-    "\t\t _____                                                             _____ ",
-    "\t\t( ___ )                                                           ( ___ )",
-    "\t\t |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |\t\t |              Main Menu               |\t   |   |",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |\t\t | [1] Arrows x5    | [2] Dungeon       |\t   |   |",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |\t\t | [3] Rest   | [4] Save & Quit   |\t   |   |",
-    "\t\t |   |\t\t +------------------+-------------------+\t   |   |",
-    "\t\t |   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|   | ",
-    "\t\t(_____)                                                           (_____) ",
-    NULL};
-char *smallHouseArr[] = {
-    "  []___	 ",
-    " /    /\\   ",
-    "/____/__\\  ",
-    "|[][]||||   ",
-    NULL};
+// char *smallhouseArr[] = {
+//     "  []___	 ",
+//     " /    /\\  ",
+//     "/____/__\\ ",
+//     "|[][]||||   ",
+//     NULL};
 
-    char *mediumHouseArr[] = {
-        "\t\t                          ",
-        "\t\t            @ @ @         ",
-        "\t\t           []___          ",
-        "\t\t          /    /\\____    ",
-        "\t\t    (~)  /_/\\_//____/\\  ",
-        "\t\t     |   | || |||__|||    ",
-        NULL
-    };
+// char *mediumhouseArr[] = {
+//     "        @ @ @       ",
+//     "       []___        ",
+//     "      /    /\\____   ",
+//     "(~)  /_/\\_//____/\\  ",
+//     " |   | || |||__|||  ",
+//     NULL};
 
-char *largeHouseArr[] = {
-    "     ':.                       ",
-    "         []_____               ",
-    "        /\\      \\            ",
-    "    ___/  \\__/\\__\\__        ",
-    "---/\\___\\ |''''''|__\\-- --- ",
-    "   ||'''| |''||''|''|       ",
-    "   ``\"\"\"`\"`\"\"))\"\"`\"\"`",
-    NULL};
+// char *largeHouseArr[] = {
+//     "     ':.                   ",
+//     "         []_____           ",
+//     "        /\\      \\          ",
+//     "    ___/  \\__/\\__\\__       ",
+//     "---/\\___\\ |''''''|__\\-- --- ",
+//     "   ||'''| |''||''|''|       ",
+//     "   ``\"\"\"`\"`\"\"))\"\"`\"\"`       ",
+//     NULL};
 
-char *castleArr[] = {
-    " [][][]  /\\     ~   ",
-    " [][][] /~~\\ __|_   ",
-    "  |::| /____\\|::|   ",
-    "  |[]|_|::::|_|[]|  ",
-    "  |::::::__::::::|  ",
-    "  |:::::/||\\:::::|  ",
-    "  |:#:::||||::#::|  ",
-    NULL};
+// char *castleArr[] = {
+//     " [][][] /"
+//     "\\ [][][] ",
+//     "  |::| /____\\ |::|  ",
+//     "  |[]|_|::::|_|[]|  ",
+//     "  |::::::__::::::|  ",
+//     "  |:::::/||\\:::::|  ",
+//     "  |:#:::||||::#::|  ",
+//     NULL};
 
 // char *largeCastleArr[] = {
 
@@ -147,38 +152,19 @@ char *castleArr[] = {
 //     "'---'--'-/___\\-'--'---' ",
 //     NULL
 
-};
+// };
 
-    char *groundArr[] = {
-        "\t\t    :::[====][====][====][====][====][====][====]::::::::::::==^=*==",
-        "\t\t    [====][====][====][====][====][====][====]:::::::::::=^^==*=====",
-        "\t\t    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",
-        NULL
-    };
-    char *heroStatDisplay[] = {
-        "+--------------+",
-        "| HP:  100/150 |",
-        "| Arrows:   52 |",
-        "| Gold:   1052 |",
-        "+--------------+",
-        "                ",
-        NULL
-    };
+// char *hero[] = {
+//     " (\\(\\    ",
+//     " ( O_O )   ",
+//     "o_(\")(\") ",
+//     NULL
 
-    char *hero[] = {
-        "           ",
-        "           ",
-        "           ",
-        " (\\(\\    ",
-        " ( ^.^ )   ",
-        "o_(\")(\") ",
-        NULL
-    };
+// };
+// char *happy = " ( ^.^ )   ";
+// char *surprised = " ( O_O )   ";
+// char *mad = " ( >.< )   ";
+// char *annoyed = " ( -.- )   ";
+// char *sad = " ( ;_; )   ";
 
-char *happy = " ( ^.^ )   ";
-char *surprised = " ( O_O )   ";
-char *mad = " ( >.< )   ";
-char *annoyed = " ( -.- )   ";
-char *sad = " ( ;_; )   ";
-
-// #endif /* MENU_TEST_H*/
+// #endif /* MENU_POINTERS_H*/
