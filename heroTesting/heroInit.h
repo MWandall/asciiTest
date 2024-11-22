@@ -8,15 +8,17 @@ typedef struct
     char name[50];
     int level;
     int exp;
+    int exp_to_next_level;
     int hp;
+    int max_hp;
     int attack;
     int magic; //maybe string? spell name? or have spells associated with numbers
-    int arrows;
     int house_level; //cosmetic
 } Hero;
 
 typedef struct
 {
+    int arrows;
     int potions;
     int gold;
     //maybe add list of spells for buffs/debuffs in combat?

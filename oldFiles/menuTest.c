@@ -11,7 +11,7 @@ int main()
     return 0;
 }
 
-//this is to refresh the console so the previous print statements dont stack up visually.
+// this is to refresh the console so the previous print statements dont stack up visually.
 void clearConsole()
 {
     // ANSI escape code to clear the screen
@@ -20,8 +20,7 @@ void clearConsole()
     printf("\033[H");
 }
 
-
-//calls splash screen and user choice for start game
+// calls splash screen and user choice for start game
 void launch()
 {
     char choice;
@@ -34,8 +33,7 @@ void launch()
         scanf(" %c", &choice);
         choice = tolower(choice);
 
-
-        if ( choice == 'y')
+        if (choice == 'y')
         {
             startMenu();
             break;
@@ -52,7 +50,7 @@ void launch()
     }
 }
 
-//prints splash screen logo
+// prints splash screen logo
 void splashLogo()
 {
     for (int i = 0; splashLogoArr[i] != NULL; i++)
@@ -61,7 +59,7 @@ void splashLogo()
     }
 }
 
-//prints menu and user choice for menu nav
+// prints menu and user choice for menu nav
 void startMenu()
 {
     clearConsole();
@@ -91,13 +89,14 @@ void startMenu()
 
     default:
         printf("OOPS! That's not an option!");
-        while (getchar() != '\n');
+        while (getchar() != '\n')
+            ;
         startMenu();
         break;
     }
 }
 
-//prints main menu and user choice for menu nav
+// prints main menu and user choice for menu nav
 void mainMenu()
 {
     clearConsole();
@@ -131,32 +130,44 @@ void mainMenu()
         break;
     default:
         printf("OOPS! Thats not an option!");
-        while (getchar() != '\n');
-        
+        while (getchar() != '\n')
+            ;
+
         mainMenu();
         break;
     }
 }
 
-void printHomeSceneInline() {
-        for (int i = 0; mediumHouseArr[i] != NULL && hero[i] != NULL && heroStatDisplay[i] != NULL; i++)
+void printHomeSceneInline()
+{
+    for (int i = 0; mediumHouseArr[i] != NULL && hero[i] != NULL && heroStatDisplay[i] != NULL; i++)
     {
         printf("%s \t %s \t %s\n", mediumHouseArr[i], hero[i], heroStatDisplay[i]);
-    }  
+    }
 }
-void printGround() {
-    for (int i = 0; groundArr[i] != NULL; i++) {
+void printGround()
+{
+    for (int i = 0; groundArr[i] != NULL; i++)
+    {
         printf("%s\n", groundArr[i]);
     }
 }
-//TODO: make item menu and add updates to hero struct
+// TODO: make item menu and add updates to hero struct
 void shopMenu()
 {
-    underConstruction();
+
+    clearConsole();
+    int choice = 0;
+
+    for (int i = 0; shopMenuArr[i] != NULL; i++)
+    {
+        printf("%s\n", shopMenuArr[i]);
+    }
+    // !underConstruction();
 }
 
 // //TODO: figure out how i want to handle levels. (will this lead to a menu to pick starting floor or just throw you right into dungeon)
-//could add this as a stat attached to hero. (dungeon level) to keep track of progress/option to start at deeper dungeon floor
+// could add this as a stat attached to hero. (dungeon level) to keep track of progress/option to start at deeper dungeon floor
 void enterDungeon()
 {
     underConstruction();
@@ -183,7 +194,7 @@ void cheatMenu()
 // //TODO: will update but current example is in ./heroTesting/heroInit.c
 void newGame()
 {
-    //heroInit(); will be added here
+    // heroInit(); will be added here
     mainMenu();
 }
 
