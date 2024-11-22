@@ -52,6 +52,73 @@ void printShopMenu()
     
 }
 
+void printHero()
+{
+    for (int i = 0; hero[i] != NULL; i++)
+    {
+        printf("%s\n", hero[i]);
+    }
+    printf("\n");
+}
+
+void heroExpression(char *hero[], char *newFace)
+{
+ hero[1] = newFace;
+ printHero();
+}
+
+//TODO: these are still tests
+void staticMobs()
+{
+    
+    for (int i = 0; archerResting[i] != NULL && archerResting[i] != NULL; i++)
+    {
+        printf("%s \t %s\n", archerAttacking[i], archerResting[i]);
+    }
+
+    for (int i = 0; mageResting[i] != NULL && mageResting[i] != NULL; i++)
+    {
+        printf("%s \t %s\n", mageAttacking[i], mageResting[i]);
+    }
+    for (int i = 0; warriorResting[i] != NULL && warriorResting[i] != NULL; i++)
+    {
+        printf("%s \t %s\n", warriorAttacking[i], warriorResting[i]);
+    }
+}
+
+//TODO: these are still tests
+void mobAnimation()
+{
+    // number of times animation happens
+    for (int i = 0; i < 5; i++)
+    {
+        clearConsole();
+        //toggle animation back and forth
+        if (i % 2 == 0)
+        {
+            // looping through mob arrays
+            for (int i = 0; archerResting[i] != NULL && mageResting[i] != NULL && warriorResting[i] != NULL; i++)
+            {
+                printf("%s \t %s \t %s\n", archerResting[i], mageResting[i], warriorResting[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; archerAttacking[i] != NULL && mageAttacking[i] != NULL && warriorAttacking[i] != NULL; i++)
+            {
+                printf("%s \t %s \t %s\n", archerAttacking[i], mageAttacking[i], warriorAttacking[i]);
+            }
+        }
+        sleep(1);
+    }
+
+    for (int i = 0; archerResting[i] != NULL && mageResting[i] != NULL && warriorResting[i] != NULL; i++)
+    {
+        printf("%s \t %s \t %s\n", archerResting[i], mageResting[i], warriorResting[i]);
+    }
+}
+
+
 void underConstruction()
 {
     int choice = 0;
@@ -75,4 +142,12 @@ void underConstruction()
     default:
         break;
     }
+}
+
+void clearConsole()
+{
+    // ANSI escape code to clear the screen
+    printf("\033[2J");
+    // Move the cursor to the top-left corner
+    printf("\033[H");
 }
