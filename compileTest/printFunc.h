@@ -5,20 +5,20 @@
 #include <stdio.h>
 
 void heroExpression(char *hero[], char *newFace);
-void clearConsole();
-void launch();
-void splashLogo();
-void startMenu();
-void mainMenu();
-void shopMenu();
-void enterDungeon();
-void miniGameMenu();
-void saveAndQuit();
-void cheatMenu();
-void newGame();
-void continueGame();
-int exitGame();
-void credits();
+// void clearConsole();
+// void launch();
+void printSplashLogo();
+void printStartMenu();
+void printMainMenu();
+void printShopMenu();
+// void enterDungeon();
+// void miniGameMenu();
+// void saveAndQuit();
+// void cheatMenu();
+// void newGame();
+// void continueGame();
+// int exitGame();
+// void credits();
 void underConstruction();
 void printHomeSceneInline();
 void printGround();
