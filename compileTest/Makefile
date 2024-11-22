@@ -19,3 +19,12 @@ $(TARGET): $(OBJS)
 # Clean up
 clean:
 	rm -f $(OBJS) $(TARGET)
+
+
+
+# *BASH
+# make
+# ./program
+
+# *Clean Up (Optional): remove all the compiled .o files and the program executable
+# make clean
