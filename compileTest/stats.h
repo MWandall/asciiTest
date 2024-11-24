@@ -1,8 +1,7 @@
 #ifndef HERO_INIT_H
 #define HERO_INIT_H
 #include <stdio.h>
-void initializeHero(Hero *heroPtr, const char *name);
-Mob initializeMob(int consecutiveFights);
+
 
 // Inventory struct
 typedef struct
@@ -36,5 +35,13 @@ typedef struct
     int max_hp;
     int attack;
 } Mob;
+
+void initializeHero(Hero *heroPtr, const char *name);
+void saveHeroToFile(const Hero *hero, const char *filename);
+int loadHeroFromFile(Hero *hero, const char *filename);
+int isValidName(const char *name);
+void getValidHeroName(char *name, size_t maxLength);
+
+// Mob initializeMob(int consecutiveFights);
 
 #endif /* HERO_INIT_H */
