@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include "printFunc.h"
 
+
+// prints splash screen logo
 void printSplashLogo()
 {
     for (int i = 0; splashLogoArr[i] != NULL; i++)
@@ -10,6 +12,8 @@ void printSplashLogo()
         printf("%s\n", splashLogoArr[i]);
     }
 }
+
+// prints menu and user choice for menu nav
 void printStartMenu()
 {
     for (int i = 0; startMenuArr[i] != NULL; i++)
@@ -18,6 +22,7 @@ void printStartMenu()
     }
 }
 
+// prints main menu and user choice for menu nav
 void printMainMenu()
 {
     for (int i = 0; mainMenuArr[i] != NULL; i++)
@@ -26,6 +31,7 @@ void printMainMenu()
     }
 }
 
+// prints home scene
 void printHomeSceneInline()
 {
     for (int i = 0; mediumHouseArr[i] != NULL && hero[i] != NULL && heroStatDisplay[i] != NULL; i++)
@@ -34,6 +40,7 @@ void printHomeSceneInline()
     }
 }
 
+//ground tiles
 void printGround()
 {
     for (int i = 0; groundArr[i] != NULL; i++)
@@ -42,6 +49,7 @@ void printGround()
     }
 }
 
+//menu for shop
 void printShopMenu()
 {
 
@@ -52,6 +60,7 @@ void printShopMenu()
     
 }
 
+
 void printHero()
 {
     for (int i = 0; hero[i] != NULL; i++)
@@ -61,12 +70,14 @@ void printHero()
     printf("\n");
 }
 
+// we can update hero's facial expression from new face array
 void heroExpression(char *hero[], char *newFace)
 {
  hero[1] = newFace;
  printHero();
 }
 
+// these are printouts of the mobs. we will use them like in the home scene
 //TODO: these are still tests
 void staticMobs()
 {
@@ -86,6 +97,7 @@ void staticMobs()
     }
 }
 
+// when the mobs attack, they will do one round of animation
 //TODO: these are still tests
 void mobAnimation()
 {
@@ -118,7 +130,7 @@ void mobAnimation()
     }
 }
 
-
+// if you hit a menu that is incomplete
 void underConstruction()
 {
     int choice = 0;

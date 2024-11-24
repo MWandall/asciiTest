@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -g
 
 # Source files and output
-SRCS = menuMain.c printFunc.c stats.c
+SRCS = menuMain.c printFunc.c stats.c fileHandling.c
 OBJS = $(SRCS:.c=.o)
 TARGET = program
 
