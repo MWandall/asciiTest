@@ -2,13 +2,11 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <unistd.h>
 #include "printFunc.h"
 #include "menuMain.h"
 #include "stats.h"
-
-
-
-
+#include "fileHandling.h"
 
 
 int main()
@@ -16,11 +14,10 @@ int main()
     clearConsole();
     launch();
 
-
     return 0;
 }
 
-
+// calls splash screen and user choice for starting game
 void launch()
 {
     char choice;
@@ -50,13 +47,13 @@ void launch()
     }
 }
 
-
-
 // prints menu and user choice for menu nav
 void startMenu()
 {
     clearConsole();
     int choice = 0;
+
+    // start menu graphic
     printStartMenu();
 
     scanf("%d", &choice);
@@ -78,26 +75,26 @@ void startMenu()
 
     default:
         printf("OOPS! That's not an option!");
-        while (getchar() != '\n')
-            ;
+        while (getchar() != '\n');
         startMenu();
         break;
     }
 }
 
-//TODO: file handling
+// TODO: file handling
 void newGame()
 {
-   // void handleNewGame(const char *saveFilePath);
+    HandleNewGame();
+    // void handleNewGame(const char *saveFilePath);
     // heroInit will be added here
     mainMenu();
 }
 
-
 // //TODO: once file handling is in place, populate heroInit from CSV
 void continueGame()
 {
-    underConstruction();
+    handleContinueGame();
+    // underConstruction();
 }
 
 // prints main menu and user choice for menu nav
@@ -139,26 +136,33 @@ void mainMenu()
     }
 }
 
-
-
-//TODO: in progress for visuals
+// TODO: in progress for visuals
 void enterDungeon()
 {
     underConstruction();
 }
 
-//TODO: if we add mini games
+void shopMenu()
+{
+
+    clearConsole();
+    int choice = 0;
+    printShopMenu();
+    
+    // !underConstruction();
+}
+
+// TODO: if we add mini games
 void miniGameMenu()
 {
     underConstruction();
 }
 
-//TODO: file handling 
+// TODO: file handling
 void saveAndQuit()
 {
     underConstruction();
 }
-
 
 // //TODO: make a secret menu to add levels/gold to show more of the games intended progression for presentation
 void cheatMenu()
@@ -166,46 +170,10 @@ void cheatMenu()
     underConstruction();
 }
 
-
-// // Function to save hero stats to a CSV file
-// void saveHeroToFile(const Hero *hero, const char *filename) {
-//     FILE *file = fopen(filename, "w");
-//     if (!file) {
-//         perror("Error opening file for writing");
-//         return;
-//     }
-
-//     fprintf(file, "%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",
-//             hero->name, hero->level, hero->exp, hero->exp_to_next_level,
-//             hero->hp, hero->max_hp, hero->attack, hero->magic,
-//             hero->consecutiveFights, hero->inventory.arrows,
-//             hero->inventory.potions, hero->inventory.gold);
-
-//     fclose(file);
-// }
-
-// // Function to load hero stats from a CSV file
-// int loadHeroFromFile(Hero *hero, const char *filename) {
-//     FILE *file = fopen(filename, "r");
-//     if (!file) {
-//         perror("Error opening file for reading");
-//         return 0; // File not found
-//     }
-
-//     if (fscanf(file, "%49[^,],%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d",
-//                hero->name, &hero->level, &hero->exp, &hero->exp_to_next_level,
-//                &hero->hp, &hero->max_hp, &hero->attack, &hero->magic,
-//                &hero->consecutiveFights, &hero->inventory.arrows,
-//                &hero->inventory.potions, &hero->inventory.gold) != 12) {
-//         fclose(file);
-//         fprintf(stderr, "Error parsing save file\n");
-//         return 0;
-//     }
-
-//     fclose(file);
-//     return 1; // Success
-// }
-
+void credits()
+{
+    underConstruction();
+}
 
 int exitGame()
 {

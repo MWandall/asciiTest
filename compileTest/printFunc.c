@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <unistd.h>
 #include "printFunc.h"
+#include "menuMain.h"
+#include "arrays.h"
 
 
 // prints splash screen logo
@@ -40,7 +43,7 @@ void printHomeSceneInline()
     }
 }
 
-//ground tiles
+// ground tiles
 void printGround()
 {
     for (int i = 0; groundArr[i] != NULL; i++)
@@ -49,7 +52,7 @@ void printGround()
     }
 }
 
-//menu for shop
+// menu for shop
 void printShopMenu()
 {
 
@@ -57,9 +60,7 @@ void printShopMenu()
     {
         printf("%s\n", shopMenuArr[i]);
     }
-    
 }
-
 
 void printHero()
 {
@@ -73,62 +74,62 @@ void printHero()
 // we can update hero's facial expression from new face array
 void heroExpression(char *hero[], char *newFace)
 {
- hero[1] = newFace;
- printHero();
+    hero[1] = newFace;
+    printHero();
 }
 
-// these are printouts of the mobs. we will use them like in the home scene
-//TODO: these are still tests
-void staticMobs()
-{
-    
-    for (int i = 0; archerResting[i] != NULL && archerResting[i] != NULL; i++)
-    {
-        printf("%s \t %s\n", archerAttacking[i], archerResting[i]);
-    }
+// // these are printouts of the mobs. we will use them like in the home scene
+// //TODO: these are still tests
+// void staticMobs()
+// {
 
-    for (int i = 0; mageResting[i] != NULL && mageResting[i] != NULL; i++)
-    {
-        printf("%s \t %s\n", mageAttacking[i], mageResting[i]);
-    }
-    for (int i = 0; warriorResting[i] != NULL && warriorResting[i] != NULL; i++)
-    {
-        printf("%s \t %s\n", warriorAttacking[i], warriorResting[i]);
-    }
-}
+//     for (int i = 0; archerResting[i] != NULL && archerResting[i] != NULL; i++)
+//     {
+//         printf("%s \t %s\n", archerAttacking[i], archerResting[i]);
+//     }
 
-// when the mobs attack, they will do one round of animation
-//TODO: these are still tests
-void mobAnimation()
-{
-    // number of times animation happens
-    for (int i = 0; i < 5; i++)
-    {
-        clearConsole();
-        //toggle animation back and forth
-        if (i % 2 == 0)
-        {
-            // looping through mob arrays
-            for (int i = 0; archerResting[i] != NULL && mageResting[i] != NULL && warriorResting[i] != NULL; i++)
-            {
-                printf("%s \t %s \t %s\n", archerResting[i], mageResting[i], warriorResting[i]);
-            }
-        }
-        else
-        {
-            for (int i = 0; archerAttacking[i] != NULL && mageAttacking[i] != NULL && warriorAttacking[i] != NULL; i++)
-            {
-                printf("%s \t %s \t %s\n", archerAttacking[i], mageAttacking[i], warriorAttacking[i]);
-            }
-        }
-        sleep(1);
-    }
+//     for (int i = 0; mageResting[i] != NULL && mageResting[i] != NULL; i++)
+//     {
+//         printf("%s \t %s\n", mageAttacking[i], mageResting[i]);
+//     }
+//     for (int i = 0; warriorResting[i] != NULL && warriorResting[i] != NULL; i++)
+//     {
+//         printf("%s \t %s\n", warriorAttacking[i], warriorResting[i]);
+//     }
+// }
 
-    for (int i = 0; archerResting[i] != NULL && mageResting[i] != NULL && warriorResting[i] != NULL; i++)
-    {
-        printf("%s \t %s \t %s\n", archerResting[i], mageResting[i], warriorResting[i]);
-    }
-}
+// // when the mobs attack, they will do one round of animation
+// //TODO: these are still tests
+// void mobAnimation()
+// {
+//     // number of times animation happens
+//     for (int i = 0; i < 5; i++)
+//     {
+//         clearConsole();
+//         //toggle animation back and forth
+//         if (i % 2 == 0)
+//         {
+//             // looping through mob arrays
+//             for (int i = 0; archerResting[i] != NULL && mageResting[i] != NULL && warriorResting[i] != NULL; i++)
+//             {
+//                 printf("%s \t %s \t %s\n", archerResting[i], mageResting[i], warriorResting[i]);
+//             }
+//         }
+//         else
+//         {
+//             for (int i = 0; archerAttacking[i] != NULL && mageAttacking[i] != NULL && warriorAttacking[i] != NULL; i++)
+//             {
+//                 printf("%s \t %s \t %s\n", archerAttacking[i], mageAttacking[i], warriorAttacking[i]);
+//             }
+//         }
+//         sleep(1);
+//     }
+
+//     for (int i = 0; archerResting[i] != NULL && mageResting[i] != NULL && warriorResting[i] != NULL; i++)
+//     {
+//         printf("%s \t %s \t %s\n", archerResting[i], mageResting[i], warriorResting[i]);
+//     }
+// }
 
 // if you hit a menu that is incomplete
 void underConstruction()

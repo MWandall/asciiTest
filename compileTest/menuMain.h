@@ -1,6 +1,7 @@
 #ifndef MENU_MAIN_H
 #define MENU_MAIN_H
 
+
 void heroExpression(char *hero[], char *newFace);
 void clearConsole();
 void launch();
