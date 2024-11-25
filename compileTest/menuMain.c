@@ -197,7 +197,8 @@ void enterDungeon()
                 printf("You used a potion! HP restored\n");
                 printf("Press Enter to continue...");
                 while (getchar() != '\n')
-                    ; // waits for the Enter key
+                    ;      // Clear any leftover newline
+                getchar(); // Wait for Enter
                 enterDungeon();
             }
             else
@@ -206,24 +207,29 @@ void enterDungeon()
             }
             printf("Press Enter to continue...");
             while (getchar() != '\n')
-                ; // waits for the Enter key
+                ;      // Clear any leftover newline
+            getchar(); // Wait for Enter
             enterDungeon();
 
         default:
             printf("OOPS! Thats not an option!");
             printf("Press Enter to continue...");
             while (getchar() != '\n')
-                ;
+                ;      // Clear any leftover newline
+            getchar(); // Wait for Enter
             enterDungeon();
             break;
         }
     }
+
+    globalHero.inventory.gold += 100;
+    globalMob.hp = globalMob.max_hp;
     printf("Victory! You found some gold.\n");
     printf("Press Enter to continue...");
-            while (getchar() != '\n')
-                ; // waits for the Enter key
+    while (getchar() != '\n')
+        ;      // Clear any leftover newline
+    getchar(); // Wait for Enter
     mainMenu();
-
 }
 void fight()
 {
