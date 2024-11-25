@@ -5,6 +5,16 @@
 
 
 Hero globalHero;//so hero can be accessed everywhere
+Mob globalMob = {
+    .name = "Skeleton",
+    .level = 1,
+    .exp_value = 75,
+    .hp = 30,
+    .max_hp = 30,        
+    .attack = 5 
+
+};
+
 
 void initializeHero(Hero *heroPtr, const char *name)
 {

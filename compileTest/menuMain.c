@@ -137,67 +137,108 @@ void mainMenu()
     }
 }
 
-
 //************************************************************** */
 // TODO: in progress for visuals
 void enterDungeon()
 {
     int choice = 0;
-    
-    printHeroDisplay();
-    printBattleSceneInline();
-    printGround();
-    printBattleMenu();
-
-    scanf("%d", &choice);
-
-    switch (choice)
+    clearConsole();
+    while (globalHero.hp > 0 && globalMob.hp > 0)
     {
-    case 1:
-        fight();
-        break;
-    case 2:
-        globalHero.inventory.gold -= 15;
-        printf("You ran away but dropped some gold in the confusion...\n");
-        printf("Press Enter to continue...");
-        while (getchar() != '\n')
-            ; // waits for the Enter key
-        mainMenu();
-        break;
-    case 3:
-        if (globalHero.inventory.potions >= 1)
-        {
-            globalHero.inventory.potions -= 1;
-            globalHero.hp = globalHero.max_hp;
-            printf("You used a potion! HP restored\n");
-        }
-        else
-        {
-            printf("Oh no! You're out of potions!\n");
-        }
-        printf("Press Enter to continue...");
-        while (getchar() != '\n')
-            ; // waits for the Enter key
-        enterDungeon();
+        clearConsole();
+        printBattleSceneInline();
+        printGround();
+        printBattleMenu();
+        displayFightStatus();
 
-    default:
-        printf("OOPS! Thats not an option!");
-        while (getchar() != '\n')
-            ;
-        enterDungeon();
-        break;
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            clearConsole();
+            printBattleSceneInline();
+            printGround();
+            printFightMenu();
+            displayFightStatus();
+
+            int battleChoice = 0;
+            scanf("%d", &battleChoice);
+            if (battleChoice == 1 || battleChoice == 2 || battleChoice == 3)
+            {
+                globalMob.hp -= globalHero.attack;
+                globalHero.hp -= globalMob.attack;
+            }
+            else if (choice == 4)
+            {
+                enterDungeon();
+            }
+            else
+            {
+                printf("Invalid choice! Clearing buffer...\n");
+                while (getchar() != '\n')
+                    ; // Clear the input buffer
+            }
+
+            break;
+        case 2:
+            globalHero.inventory.gold -= 15;
+            printf("You ran away but dropped some gold in the confusion...\n");
+            printf("Press Enter to continue...");
+            while (getchar() != '\n')
+                ; // waits for the Enter key
+            mainMenu();
+            break;
+        case 3:
+            if (globalHero.inventory.potions >= 1)
+            {
+                globalHero.inventory.potions -= 1;
+                globalHero.hp = globalHero.max_hp;
+                printf("You used a potion! HP restored\n");
+                printf("Press Enter to continue...");
+                while (getchar() != '\n')
+                    ; // waits for the Enter key
+                enterDungeon();
+            }
+            else
+            {
+                printf("Oh no! You're out of potions!\n");
+            }
+            printf("Press Enter to continue...");
+            while (getchar() != '\n')
+                ; // waits for the Enter key
+            enterDungeon();
+
+        default:
+            printf("OOPS! Thats not an option!");
+            printf("Press Enter to continue...");
+            while (getchar() != '\n')
+                ;
+            enterDungeon();
+            break;
+        }
     }
+    printf("Victory! You found some gold.\n");
+    printf("Press Enter to continue...");
+            while (getchar() != '\n')
+                ; // waits for the Enter key
+    mainMenu();
+
 }
 void fight()
 {
     // int choice = 0;
-    printHeroDisplay();
+    // printHeroDisplay();
     printBattleSceneInline();
     printGround();
     printFightMenu();
-    
+    displayFightStatus();
 }
-
+void displayFightStatus()
+{
+    printf("\n\t\t\t-- Status --\n");
+    printf("\t\t\t%s: %d/%d HP | Skeleton: %d/%d HP\n", globalHero.name, globalHero.hp, globalHero.max_hp, globalMob.hp, globalMob.max_hp);
+}
 //************************************************************************** */
 void buyItem(int choice)
 {

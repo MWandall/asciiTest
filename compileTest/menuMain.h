@@ -25,6 +25,7 @@ void printGround();
 void printHeroDisplay();
 void printBattleSceneInline();
 void fight();
+void displayFightStatus();
 
 
 
