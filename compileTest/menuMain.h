@@ -11,6 +11,7 @@ void startMenu();
 void newGame();
 void continueGame();
 void mainMenu();
+void buyItem(int choice);
 void shopMenu();
 void enterDungeon();
 void miniGameMenu();

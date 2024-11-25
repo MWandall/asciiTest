@@ -1,0 +1,3 @@
+
+
+// Mob initializeMob(int consecutiveFights);

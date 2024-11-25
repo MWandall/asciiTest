@@ -3,9 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+Hero globalHero;//so hero can be accessed everywhere
+
 void initializeHero(Hero *heroPtr, const char *name)
 {
-
+    
 
     strcpy(heroPtr->name, name);
     // first name is a pointer to the hero struct
@@ -24,7 +27,7 @@ void initializeHero(Hero *heroPtr, const char *name)
     heroPtr->inventory.potions = 3;
 }
 
-// Function to save hero stats to a CSV file
+// save hero stats to a CSV file
 void saveHeroToFile(const Hero *hero, const char *filename)
 {
     FILE *file = fopen(filename, "w");
@@ -43,7 +46,7 @@ void saveHeroToFile(const Hero *hero, const char *filename)
     fclose(file);
 }
 
-// Function to load hero stats from a CSV file
+// load hero stats from a CSV file
 int loadHeroFromFile(Hero *hero, const char *filename)
 {
     FILE *file = fopen(filename, "r");
@@ -100,18 +103,3 @@ void getValidHeroName(char *name, size_t maxLength)
         }
     } while (!valid);
 }
-
-// Mob initializeMob(int consecutiveFights){
-//     Mob mob;
-//         static const char *monster_names[] = {
-//         "Goblin", "Orc", "Troll", "Skeleton", "Zombie"
-//     };
-//     strncpy(mob.name, monster_names[rand() % 5], 49);
-//     mob.level = 1 + consecutiveFights;
-//     mob.exp_value = 65 + (rand() % 20); //add expMod in consecutiveFights
-//     mob.hp = 80 + (consecutiveFights * 10);
-//     mob.max_hp = mob.hp;
-//     mob.attack = 12 + (consecutiveFights * 2);
-
-//     return mob;
-// }

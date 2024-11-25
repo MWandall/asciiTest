@@ -26,6 +26,10 @@ typedef struct
     Inventory inventory;
 } Hero;
 
+// Global hero instance
+extern Hero globalHero;
+
+
 typedef struct
 {
     char name[50];
@@ -42,6 +46,5 @@ int loadHeroFromFile(Hero *hero, const char *filename);
 int isValidName(const char *name);
 void getValidHeroName(char *name, size_t maxLength);
 
-// Mob initializeMob(int consecutiveFights);
 
 #endif /* HERO_INIT_H */

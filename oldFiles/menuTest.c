@@ -157,13 +157,13 @@ void shopMenu()
 {
 
     clearConsole();
-    int choice = 0;
+    // int choice = 0;
 
-    for (int i = 0; shopMenuArr[i] != NULL; i++)
-    {
-        printf("%s\n", shopMenuArr[i]);
-    }
-    // !underConstruction();
+    // for (int i = 0; shopMenuArr[i] != NULL; i++)
+    // {
+    //     printf("%s\n", shopMenuArr[i]);
+    // }
+    underConstruction();
 }
 
 // //TODO: figure out how i want to handle levels. (will this lead to a menu to pick starting floor or just throw you right into dungeon)

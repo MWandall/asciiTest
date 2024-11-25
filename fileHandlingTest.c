@@ -61,7 +61,6 @@ void saveHeroToFile(const Hero *hero, const char *filename)
     fclose(file);
 }
 
-
 // Function to load hero stats from a CSV file
 int loadHeroFromFile(Hero *hero, const char *filename)
 {
@@ -120,10 +119,25 @@ void getValidHeroName(char *name, size_t maxLength)
     } while (!valid);
 }
 
-// Main function to handle new or continued game
-void handleGameOptions()
+// Function to print hero stats
+void printHeroStats(const Hero *hero)
 {
-    Hero hero;
+    printf("\nHero Stats:\n");
+    printf("Name: %s\n", hero->name);
+    printf("Level: %d\n", hero->level);
+    printf("Experience: %d\n", hero->exp);
+    printf("Experience to Next Level: %d\n", hero->exp_to_next_level);
+    printf("HP: %d/%d\n", hero->hp, hero->max_hp);
+    printf("Attack: %d\n", hero->attack);
+    printf("Magic: %d\n", hero->magic);
+    printf("Consecutive Fights: %d\n", hero->consecutiveFights);
+    printf("Inventory - Arrows: %d, Potions: %d, Gold: %d\n", 
+           hero->inventory.arrows, hero->inventory.potions, hero->inventory.gold);
+}
+
+// Main function to handle new or continued game
+void handleGameOptions(Hero *hero)
+{
     const char *filename = "savefile.csv";
 
     printf("Select an option:\n1. New Game\n2. Continue Game\n");
@@ -152,29 +166,40 @@ void handleGameOptions()
         char name[50];
         getValidHeroName(name, sizeof(name)); // Get valid hero name
 
-        initializeHero(&hero, name);
-        saveHeroToFile(&hero, filename);
+        initializeHero(hero, name);
+        saveHeroToFile(hero, filename);
         printf("New game initialized and saved.\n");
     }
     else if (choice == 2)
     {
-        if (loadHeroFromFile(&hero, filename))
+        if (loadHeroFromFile(hero, filename))
         {
-            printf("Game loaded successfully! Welcome back, %s.\n", hero.name);
+            printf("Game loaded successfully! Welcome back, %s.\n", hero->name);
         }
         else
         {
             printf("No save file found or invalid data. Start a new game instead.\n");
+            return; // Exit if loading fails
         }
     }
     else
     {
         printf("Invalid choice.\n");
+        return; // Exit if invalid choice
     }
+
+    // Print the hero's stats after loading or initializing
+    // printHeroStats(hero);
 }
 
 int main()
 {
-    handleGameOptions();
+    Hero hero;  // Declare the hero variable in main
+    handleGameOptions(&hero);  // Pass the hero to the game handling function
+
+    // The stats can now be accessed outside handleGameOptions by calling printHeroStats(hero);
+    printHeroStats(&hero);  
+    // Optionally, print stats again in main if needed
+
     return 0;
 }
