@@ -20,6 +20,9 @@ extern char *mageResting[];
 extern char *mageAttacking[];
 extern char *warriorResting[];
 extern char *warriorAttacking[];
+extern char *battleMenuArr[];
+extern char *fightMenuArr[];
+extern char *battleSpacerArr[];
 
 
 #endif /* ARRAYS_H */

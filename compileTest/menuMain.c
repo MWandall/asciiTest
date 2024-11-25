@@ -95,6 +95,7 @@ void continueGame()
 {
     handleContinueGame();
     // underConstruction();
+    mainMenu();
 }
 
 // prints main menu and user choice for menu nav
@@ -118,7 +119,7 @@ void mainMenu()
         enterDungeon();
         break;
     case 3:
-        miniGameMenu();
+        rest();
         break;
     case 4:
         saveAndQuit();
@@ -136,12 +137,68 @@ void mainMenu()
     }
 }
 
+
+//************************************************************** */
 // TODO: in progress for visuals
 void enterDungeon()
 {
-    underConstruction();
+    int choice = 0;
+    
+    printHeroDisplay();
+    printBattleSceneInline();
+    printGround();
+    printBattleMenu();
+
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+    case 1:
+        fight();
+        break;
+    case 2:
+        globalHero.inventory.gold -= 15;
+        printf("You ran away but dropped some gold in the confusion...\n");
+        printf("Press Enter to continue...");
+        while (getchar() != '\n')
+            ; // waits for the Enter key
+        mainMenu();
+        break;
+    case 3:
+        if (globalHero.inventory.potions >= 1)
+        {
+            globalHero.inventory.potions -= 1;
+            globalHero.hp = globalHero.max_hp;
+            printf("You used a potion! HP restored\n");
+        }
+        else
+        {
+            printf("Oh no! You're out of potions!\n");
+        }
+        printf("Press Enter to continue...");
+        while (getchar() != '\n')
+            ; // waits for the Enter key
+        enterDungeon();
+
+    default:
+        printf("OOPS! Thats not an option!");
+        while (getchar() != '\n')
+            ;
+        enterDungeon();
+        break;
+    }
+}
+void fight()
+{
+    // int choice = 0;
+    printHeroDisplay();
+    printBattleSceneInline();
+    printGround();
+    printFightMenu();
+    
 }
 
+//************************************************************************** */
 void buyItem(int choice)
 {
     const char *filename = "savefile.csv"; //  for saving
@@ -221,16 +278,18 @@ void shopMenu()
     }
 }
 
-// TODO: if we add mini games
-void miniGameMenu()
+void rest()
 {
-    underConstruction();
+
+    globalHero.hp = globalHero.max_hp;
+    mainMenu();
 }
 
-// TODO: file handling
 void saveAndQuit()
 {
-    underConstruction();
+    const char *filename = "savefile.csv";
+    saveHeroToFile(&globalHero, filename);
+    exitGame();
 }
 
 // //TODO: make a secret menu to add levels/gold to show more of the games intended progression for presentation
@@ -241,7 +300,30 @@ void cheatMenu()
 
 void credits()
 {
-    underConstruction();
+    printf("\nMitchell Wandall\nMichael Addo\nColby Edwards\n");
+    printf("Thanks for playing!\n");
+
+    int choice = 0;
+    while (1)
+    {
+        printf("To go back, press 1.\n");
+        if (scanf("%d", &choice) != 1)
+        {
+            // Clear invalid input
+            while (getchar() != '\n')
+                ;
+            printf("Invalid input. Please press 1.\n");
+        }
+        else if (choice == 1)
+        {
+            mainMenu();
+            return;
+        }
+        else
+        {
+            printf("Invalid input. Please press 1.\n");
+        }
+    }
 }
 
 int exitGame()

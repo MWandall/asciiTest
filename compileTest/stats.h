@@ -1,5 +1,5 @@
-#ifndef HERO_INIT_H
-#define HERO_INIT_H
+#ifndef STATS_H
+#define STATS_H
 #include <stdio.h>
 
 
@@ -40,6 +40,8 @@ typedef struct
     int attack;
 } Mob;
 
+extern Mob globalMob;
+
 void initializeHero(Hero *heroPtr, const char *name);
 void saveHeroToFile(const Hero *hero, const char *filename);
 int loadHeroFromFile(Hero *hero, const char *filename);
@@ -47,4 +49,4 @@ int isValidName(const char *name);
 void getValidHeroName(char *name, size_t maxLength);
 
 
-#endif /* HERO_INIT_H */
+#endif /* STATS_H */

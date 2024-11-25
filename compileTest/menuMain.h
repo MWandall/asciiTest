@@ -14,7 +14,7 @@ void mainMenu();
 void buyItem(int choice);
 void shopMenu();
 void enterDungeon();
-void miniGameMenu();
+void rest();
 void saveAndQuit();
 void cheatMenu();
 int exitGame();
@@ -22,6 +22,9 @@ void credits();
 void underConstruction();
 void printHomeSceneInline();
 void printGround();
+void printHeroDisplay();
+void printBattleSceneInline();
+void fight();
 
 
 

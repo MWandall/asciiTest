@@ -78,6 +78,37 @@ void heroExpression(char *hero[], char *newFace)
     printHero();
 }
 
+void printHeroDisplay(){
+    for (int i = 0; heroStatDisplay[i] != NULL; i++)
+    {
+        printf("%s\n", heroStatDisplay[i]);
+    }
+
+}
+
+void printBattleMenu(){
+    for (int i = 0; battleMenuArr[i] != NULL; i++)
+    {
+        printf("%s\n", battleMenuArr[i]);
+    }
+
+}
+
+void printFightMenu(){
+    for (int i = 0; fightMenuArr[i] != NULL; i++)
+    {
+        printf("%s\n", fightMenuArr[i]);
+    }
+
+}
+void printBattleSceneInline()
+{
+    for (int i = 0; battleSpacerArr[i] != NULL && hero[i] != NULL && archerResting[i] != NULL; i++)
+    {
+        printf("%s \t %s \t %s\n", battleSpacerArr[i], hero[i], archerResting[i]);
+    }
+}
+
 // // these are printouts of the mobs. we will use them like in the home scene
 // //TODO: these are still tests
 // void staticMobs()

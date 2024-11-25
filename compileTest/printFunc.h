@@ -24,6 +24,8 @@ void printShopMenu();
 void underConstruction();
 void printHomeSceneInline();
 void printGround();
+void printBattleMenu();
+void printFightMenu();
 // void cheatMenu();
 // void credits();
 

@@ -1,3 +1,8 @@
+// #ifndef MOB_H
+// #define MOB_H
+
+// #include <stdio.h>
 
 
-// Mob initializeMob(int consecutiveFights);
+
+// #endif /* MOB_H */
